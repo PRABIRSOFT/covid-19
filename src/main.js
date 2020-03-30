@@ -5,6 +5,13 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 
+Vue.use({
+  install: function(Vue){
+    var mapboxgl = require('mapbox-gl')
+    Vue.prototype.mapboxgl = mapboxgl
+  }
+})
+
 new Vue({
   router,
   vuetify,
