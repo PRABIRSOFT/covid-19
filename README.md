@@ -1,5 +1,8 @@
 # covid-19
 
+[![Build Status](https://travis-ci.org/PRABIRSOFT/covid-19.svg?branch=master)](https://travis-ci.org/PRABIRSOFT/covid-19)
+
+
 ## Project setup
 ```
 npm install
