@@ -22,6 +22,8 @@ export default {
       closeOnClick: false
     })
 
+
+    this.map.getCanvas().style.cursor = 'pointer'
     this.load()
   },
   methods: {
@@ -52,35 +54,26 @@ export default {
         }
       })
 
-      // this.map.on('click', 'points', function(e) {
-      //   var coordinates = e.features[0].geometry.coordinates.slice();
-      //   var state = e.features[0].properties.state;
-         
-      //   // Ensure that if the map is zoomed out such that multiple
-      //   // copies of the feature are visible, the popup appears
-      //   // over the copy being pointed to.
-      //   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-      //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      //   }
-         
-      //   new mapboxgl.Popup()
-      //   .setLngLat(coordinates)
-      //   .setHTML(state)
-      //   .addTo(vm.map);
-      // })
-
       this.map.on('mouseenter', 'points', function(e) {
-        vm.map.getCanvas().style.cursor = 'pointer'
         var coordinates = e.features[0].geometry.coordinates.slice()
-        var deaths = e.features[0].properties.total_cases
+        var state = e.features[0].properties.state
+        var total_cases = e.features[0].properties.total_cases
+        var active = e.features[0].properties.active
+        var deaths = e.features[0].properties.deaths
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
         }
-        vm.popup.setLngLat(coordinates).setHTML(deaths).addTo(vm.map)
+        vm.popup.setLngLat(coordinates).setHTML(`
+          <table>
+            <tr><td>State : </td><td>` + state + `</td></tr>
+            <tr><td>Total Cases : </td><td>` + parseInt(total_cases) + `</td></tr>
+            <tr><td>Active Cases : </td><td>` + parseInt(active) + `</td></tr>
+            <tr><td>Deaths : </td><td>` + parseInt(deaths) + `</td></tr>
+          </table>
+          `).addTo(vm.map)
       })
          
       this.map.on('mouseleave', 'points', function() {
-        vm.map.getCanvas().style.cursor = ''
         vm.popup.remove()
       })
     }
