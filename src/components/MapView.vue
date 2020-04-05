@@ -65,10 +65,10 @@ export default {
         }
         vm.popup.setLngLat(coordinates).setHTML(`
           <table>
-            <tr><td>State : </td><td>` + state + `</td></tr>
-            <tr><td>Total Cases : </td><td>` + parseInt(total_cases) + `</td></tr>
-            <tr><td>Active Cases : </td><td>` + parseInt(active) + `</td></tr>
-            <tr><td>Deaths : </td><td>` + parseInt(deaths) + `</td></tr>
+            <tr><td class="font-weight-bold">State</td><td class="font-weight-bold">` + state + `</td></tr>
+            <tr><td>Total Cases</td><td class="font-weight-bold">` + parseInt(total_cases) + `</td></tr>
+            <tr><td>Active Cases</td><td class="font-weight-bold">` + parseInt(active) + `</td></tr>
+            <tr><td>Deaths</td><td class="font-weight-bold red--text">` + parseInt(deaths) + `</td></tr>
           </table>
           `).addTo(vm.map)
       })
