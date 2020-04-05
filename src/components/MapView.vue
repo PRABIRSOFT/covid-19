@@ -8,7 +8,7 @@ export default {
   name: 'MapView',
   data: () => ({}),
   mounted () {
-    this.mapboxgl.accessToken = 'pk.eyJ1IjoicHJhYmlyIiwiYSI6ImNpcW5paTY2azAxODdmcG5oNzV3MG1xc2sifQ.dhV9Q5dxPvq0yyBlMWLrUw'
+    this.mapboxgl.accessToken = 'pk.eyJ1IjoicHJhYmlyIiwiYSI6ImNrOG16OHdxYzA2dGMzZ3BpaWFpdjZ1dmIifQ.InlqukfNIviSi3m7cOjG1Q'
     // New Mapbox Instance
     this.map = new this.mapboxgl.Map({
       container: 'map',
