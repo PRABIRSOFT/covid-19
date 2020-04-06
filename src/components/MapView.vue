@@ -13,8 +13,8 @@ export default {
     this.map = new this.mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [78.9629, 20.5937],
-      zoom: 3.5
+      center: [78.9629, 22.5937],
+      zoom: 4
     })
 
     this.popup = new this.mapboxgl.Popup({
@@ -50,7 +50,8 @@ export default {
         'type': 'circle',
         'source': 'points',
         'paint': {
-          'circle-color': layerprop
+          'circle-color': layerprop,
+          'circle-radius': 6
         }
       })
 
