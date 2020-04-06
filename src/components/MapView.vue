@@ -82,11 +82,14 @@ export default {
 </script>
 
 <style>
-#map { position: fixed; top: 0; bottom: 0; width: 100%; }
-.mapboxgl-ctrl-logo {
-  display: none;
-}
+#map { position: absolute; top: 0; bottom: 0; right: 0; left: 0; width: 100%;}
 .mapboxgl-popup {
   max-width: 400px;
+}
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+.mapboxgl-ctrl-logo {
+  display: none !important;
 }
 </style>

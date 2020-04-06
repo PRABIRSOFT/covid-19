@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <MapView/>
-  </div>
+  <MapView></MapView>
 </template>
 
 <script>

@@ -1,10 +1,13 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <v-toolbar-title class="display-1">COVID-19 Situation In India</v-toolbar-title>
+      <v-toolbar-title class="display-1">COVID-19 India</v-toolbar-title>
     </v-app-bar>
-    <v-content wrap fill-height>
-      <router-view></router-view>
+    <v-content>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid fill-height>
+        <router-view></router-view>
+      </v-container>
     </v-content>
   </v-app>
 </template>
